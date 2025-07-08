@@ -82,7 +82,7 @@ export const destinations = [
     activities: [
       {
         id: 'old_quarters',
-        name: 'Aswan High Dam',
+        name: 'Old Quarters',
         imageUrl: 'https://vietdantravel.com/wp-content/uploads/2023/05/Hanoi-Old-Quarter-Vietnam-DMC.jpg',
         selected: false
       },
