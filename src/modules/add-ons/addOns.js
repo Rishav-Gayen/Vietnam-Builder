@@ -224,7 +224,7 @@ const showFinalCompletion = () => {
               document.dispatchEvent(new CustomEvent('bookingComplete', {
                 detail: result.value
               }));
-              window.top.location.href = 'https://bonhomieeodyssey.zohocreatorportal.in/#Page:Custom_Packages';
+              window.top.location.href = 'https://creatorapp.zohopublic.in/bonhomieeodyssey/bonhomiee-odyssey/page-perma/Custom_Packages/ftEgxB3Qz33d59e9ePfN1qC7On9DXYG1knpxUVkkhE23b2K0NpPDgtD0zbpG3517srsHKNa1vCd5mW6UNhXXrDPxe1xpvX2sVfA1';
             }
           });
         }
