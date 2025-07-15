@@ -13,7 +13,7 @@ export const SHEETY_CONFIG = {
  */
 export const saveTripToSheety = async (tripData, customerData) => {
 
-  if (!customerData.name || !customerData.email || !customerData.phone) {
+  if (!customerData.name || !customerData.phone) {
     throw new Error('All customer details are required');
   }
 

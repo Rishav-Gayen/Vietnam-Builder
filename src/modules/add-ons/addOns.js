@@ -135,7 +135,7 @@ const showFinalCompletion = () => {
             </div>
             <div class="form-group">
               <label for="customer-email">Email Address</label>
-              <input type="email" id="customer-email" name="email" required
+              <input type="email" id="customer-email" name="email"
                      placeholder="john@example.com">
             </div>
             <div class="form-group">
