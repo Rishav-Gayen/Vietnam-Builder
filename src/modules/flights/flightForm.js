@@ -175,7 +175,6 @@ export const setupFlightForm = () => {
     saveFlightPreferences(formData);
   }, 300));
 };
-
 // Temporary add-ons placeholder until you create the actual module
 
 // Save Confirmation
