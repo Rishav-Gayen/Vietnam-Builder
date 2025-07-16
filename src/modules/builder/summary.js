@@ -315,8 +315,12 @@ export function updateItinerarySummary() {
           <p><strong>Time:</strong> ${formatFlightTime(flightPrefs.departureTime)}</p>
           <p><strong>Class:</strong> ${formatTravelClass(flightPrefs.travelClass)}</p>
           ${flightPrefs.dietaryPreferences?.length ? `
-            <p><strong>Dietary Needs:</strong> 
-              ${flightPrefs.dietaryPreferences.join(', ')}
+            <p><strong>Dietary Needs:</strong>
+              <div class="dietary-tags">
+                ${flightPrefs.dietaryPreferences.map(pref => 
+                  `<span class="dietary-tag">${pref}</span>`
+                ).join('')}
+              </div>
             </p>` : ''}
         </div>
       </div>
