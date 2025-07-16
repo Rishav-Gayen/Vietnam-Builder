@@ -29,6 +29,18 @@ export const destinations = [
         imageUrl: 'https://www.templeseeker.com/wp-content/uploads/2020/02/tommanon-temple.jpg',
         selected: false
       },
+      {
+        id: "tuol_sleng_museum",
+        name: 'Tuol Sleng museum tour with local guide',
+        imageUrl: 'https://a.cdn-hotels.com/gdcs/production62/d374/4b6fdead-14fe-4158-b924-d49e226d5f40.jpg',
+        selected: false
+      },
+      {
+        id: "oudong_mountain",
+        name: "Oudong Mountain & Countryside Pagoda Tour",
+        imageUrl: 'http://farm8.staticflickr.com/7305/10622661885_3219cbb1c1_z.jpg',
+        selected: false
+      }
     ],
     accommodationOptions: [
       'Accomodation (3 Star)',
@@ -60,6 +72,12 @@ export const destinations = [
         imageUrl: 'https://vmtravel.com.vn/wp-content/uploads/2022/10/The_Old_Central_Post_Office.jpg',
         selected: false
       },
+      {
+        id: 'cu_chi',
+        name: "Cu Chi Tunnels Half Day Tour",
+        imageUrl: 'https://static.vecteezy.com/system/resources/previews/024/952/096/large_2x/the-cu-chi-tunnels-the-staff-showing-use-the-trap-in-cu-chi-tunnels-it-s-used-in-vietnam-war-famous-tourist-attraction-in-vietnam-stock-free-photo.jpg',
+        selected: false
+      },
     ],
     accommodationOptions: [
       'Accomodation (3 Star)',
@@ -82,26 +100,38 @@ export const destinations = [
     activities: [
       {
         id: 'old_quarters',
-        name: 'Old Quarters',
+        name: 'Hanoi old quarter walking tour',
         imageUrl: 'https://vietdantravel.com/wp-content/uploads/2023/05/Hanoi-Old-Quarter-Vietnam-DMC.jpg',
         selected: false
       },
       {
         id: 'ninh_binh_province',
-        name: 'Ninh Binh Province',
+        name: 'Ninh Binh Province Day Tour',
         imageUrl: 'https://vietnam.travel/sites/default/files/inline-images/shutterstock_138213581.jpg',
         selected: false
       },
       {
         id: 'mua_cave',
-        name: 'Mua Cave Tour',
+        name: 'Mua Cave Hike and Viewpoint',
         imageUrl: 'https://localvietnam.com/wp-content/uploads/2019/08/mua-cave-dragon.jpg',
         selected: false
       },
       {
         id: 'tamcoc',
-        name: 'Tamcoc',
+        name: 'Tam Coc Sampan Boat Ride',
         imageUrl: 'https://nomadisbeautiful.com/wp-content/uploads/2017/03/TamCoc-1.jpg',
+        selected: false
+      },
+      {
+        id: 'mausoleum',
+        name: 'Ho Chi Minh mausoleum & Ba Dinh Complex',
+        imageUrl: 'https://authentiktravel.com/media/ckeditor/ho%20chi%20minh%20mausoleum.jpg',
+        selected: false
+      },
+      {
+        id: 'tran_quoc',
+        name: 'Tran Quoc pagoda & West Lake Cultural Sites',
+        imageUrl: 'https://culturephamtravel.com/wp-content/uploads/2022/10/tran-quoc-pagoda-culturephamtravel-6.jpg',
         selected: false
       }
     ],
@@ -130,11 +160,95 @@ export const destinations = [
         imageUrl: 'https://www.halonghub.com/wp-content/uploads/2022/06/HalongHub-HeroHome.jpg',
         selected: false
       },
+      {
+        id: 'cruise_luon',
+        name: 'Halong Bay Luon Cave adventure cruise',
+        imageUrl: 'https://hanoiexploretravel.com/wp-content/uploads/2023/06/visit-luon-cave1.jpg',
+        selected: false
+      },
+      {
+        id: 'lanha_bay',
+        name: 'Lanha Bay & Cat ba island cruise',
+        imageUrl: 'https://goodmorningcatba.com/wp-content/uploads/2023/02/Lan-Ha-Bay-Cat-Ba-Island.jpg',
+        selected: false
+      }
     ],
     accommodationOptions: [
       '3 Star Cruise',
       '4 Star Cruise',
       '5 Star Cruise'
+    ],
+    metadata: {
+      region: 'halong_bay',
+      popular: false,
+      idealFor: ['cruise', 'chilling']
+    }
+  },
+  {
+    id: 'hoi_anh',
+    name: 'Hoi Anh',
+    imageUrl: 'https://vietnamdiscovery.com/wp-content/uploads/2020/08/Highlights-of-Hoi-An-Lantern-Festival-2048x1365.jpg',
+    shortDesc: "The city of lanterns",
+    activities: [
+      {
+        id: 'three_day_cruise_sightseeing_Halong_Bay',
+        name: 'Ancient Town walking tour',
+        imageUrl: 'https://travel.wideee.com/uploads/hoi-an/6.jpg',
+        selected: false
+      },
+      {
+        id: 'cruise_luon',
+        name: 'Thu Bon River Lantern Boat Ride',
+        imageUrl: 'https://explorevietnam.com.vn/hoi-an/wp-content/uploads/2024/03/Hoi-An-Lantern-Boat-On-Hoai-River-1.png',
+        selected: false
+      },
+      {
+        id: 'lanha_bay',
+        name: 'Basket Boat Ride in Coconut Village',
+        imageUrl: 'https://izitour.com/media/ckeditor/basket-boat-ride-in-hoi-an-adventurous.webp',
+        selected: false
+      }
+    ],
+    accommodationOptions: [
+      '3 Star Cruise',
+      '4 Star Cruise',
+      '5 Star Cruise'
+    ],
+    metadata: {
+      region: 'halong_bay',
+      popular: false,
+      idealFor: ['cruise', 'chilling']
+    }
+  },
+  {
+    id: 'da_nang',
+    name: 'Da Nang',
+    imageUrl: 'https://besthuecitytour.com/wp-content/uploads/2020/09/Things-To-Do-In-Da-Nang-Best-Hue-City-Tour-Travel-1.jpg',
+    shortDesc: "Visit the iconic golden bridge",
+    activities: [
+      {
+        id: 'bana_hills',
+        name: 'Ba Na Hills and Golden Bridge tour',
+        imageUrl: 'https://veronikasadventure.com/wp-content/uploads/2024/10/1_da-nang-ba-na-hills-and-golden-bridge-small-group-tour-3.jpg',
+        selected: false
+      },
+      {
+        id: 'marble_mountains',
+        name: 'Marble Mountains and Linh Ung Pagoda tour',
+        imageUrl: 'https://gadttravel.com/uploads/vietnam/da-nang/linh-ung-pagoda-danang.jpg',
+        selected: false
+      },
+      {
+        id: 'dragon_bridge',
+        name: 'Han river and Dragon Bridge Night Tour',
+        imageUrl: 'https://thumbs.dreamstime.com/b/dragon-bridge-cross-han-river-danang-city-vietnam-night-separated-quang-nam-province-one-five-84965195.jpg',
+        selected: false
+      }
+    ],
+    accommodationOptions: [
+      'Accomodation (3 Star)',
+      'Accomodation (4 Star)',
+      'Accomodation (5 Star)',
     ],
     metadata: {
       region: 'halong_bay',
