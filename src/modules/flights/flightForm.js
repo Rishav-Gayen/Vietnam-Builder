@@ -105,6 +105,21 @@ export const setupFlightForm = () => {
     departureDateInput.setAttribute('min', today);
   }
 
+  // Set up single-select behavior for dietary preferences
+  const dietaryCheckboxes = form.querySelectorAll('input[name="dietary-prefs"]');
+  dietaryCheckboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', (e) => {
+      if (e.target.checked) {
+        // Uncheck all other dietary preference checkboxes
+        dietaryCheckboxes.forEach(otherCheckbox => {
+          if (otherCheckbox !== e.target) {
+            otherCheckbox.checked = false;
+          }
+        });
+      }
+    });
+  });
+
   const getFormData = () => {
     return {
       departureCity: form.querySelector('#departure-city').value.trim(),

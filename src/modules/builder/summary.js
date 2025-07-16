@@ -188,27 +188,96 @@ const scrollToTop = () => {
   });
 };
 
-const handleItinerarySubmit = () => {
-  const itinerary = getItinerary();
-  const flightPrefs = getFlightPreferences();
+const handleItinerarySubmit = async (e) => {
+  if (e) e.preventDefault();
+  const currentStage = getCurrentStage();
+  const submitBtn = document.getElementById('submit-itinerary');
   
-  if (!itinerary || itinerary.length === 0) {
-    showAlert('Please add at least one destination');
-    return;
+  if (!submitBtn) return;
+
+  // Get the flight preferences form
+  const form = document.getElementById('flight-preferences-form');
+  if (form) {
+    // Get form data
+    const formData = {
+      departureCity: form.querySelector('#departure-city')?.value.trim(),
+      departureDate: form.querySelector('#departure-date')?.value,
+      departureTime: form.querySelector('input[name="departure-time"]:checked')?.value,
+      travelClass: form.querySelector('#travel-class')?.value,
+      dietaryPreferences: Array.from(
+        form.querySelectorAll('input[name="dietary-prefs"]:checked')
+      ).map(el => el.value)
+    };
+
+    // Validate form
+    const errors = [];
+    if (!formData.departureCity) errors.push('Please enter a departure city');
+    if (!formData.departureDate) errors.push('Please select a departure date');
+    if (!formData.departureTime) errors.push('Please select a preferred time window');
+    if (!formData.travelClass) errors.push('Please select a travel class');
+    
+    if (errors.length > 0) {
+      Swal.fire({
+        title: 'Incomplete Flight Preferences',
+        html: `Please complete the following required fields:<br><br>• ${errors.join('<br>• ')}`,
+        icon: 'error',
+        confirmButtonText: 'Got it!',
+        confirmButtonColor: '#00afef',
+        customClass: {
+          container: 'custom-swal-container',
+          popup: 'custom-swal-popup',
+          title: 'custom-swal-title',
+          htmlContainer: 'custom-swal-html',
+          confirmButton: 'custom-swal-confirm',
+          closeButton: 'custom-swal-close'
+        },
+        showClass: {
+          popup: 'swal2-show',
+          backdrop: 'swal2-backdrop-show',
+          icon: 'swal2-icon-show'
+        },
+        hideClass: {
+          popup: 'swal2-hide',
+          backdrop: 'swal2-backdrop-hide',
+          icon: 'swal2-icon-hide'
+        }
+      });
+      return;
+    }
+
+    try {
+      // Save flight preferences
+      await saveFlightPreferences(formData);
+      
+      // Log the beautiful itinerary
+      console.log(formatItinerary(getItinerary(), formData, {
+        name: 'John Doe', // Replace with actual customer data
+        email: 'john@example.com',
+        phone: '+1234567890'
+      }));
+
+      // Move to the next stage
+      if (currentStage === 'destinations') {
+        // Show the flight preferences form
+        document.getElementById('destinations-selection').innerHTML = renderFlightForm();
+        setupFlightForm();
+        updateItinerarySummary();
+        scrollToTop();
+      }
+    } catch (error) {
+      console.error('Error saving flight preferences:', error);
+      // Fail silently
+      return;
+    }
+  } else {
+    // If no form is present, show the flight preferences form
+    if (currentStage === 'destinations') {
+      document.getElementById('destinations-selection').innerHTML = renderFlightForm();
+      setupFlightForm();
+      updateItinerarySummary();
+      scrollToTop();
+    }
   }
-
-  // Format and log the beautiful itinerary
-  console.log(formatItinerary(itinerary, flightPrefs, {
-    name: 'John Doe', // Replace with actual customer data
-    email: 'john@example.com',
-    phone: '+1 234 567 890'
-  }));
-
-  showDestinationAdded(itinerary[0]);
-  document.getElementById('destinations-selection').innerHTML = renderFlightForm();
-  setupFlightForm();
-  updateItinerarySummary();
-  scrollToTop(); // Scroll to top after form update
 };
 
 const handleCompleteTripSubmit = () => {

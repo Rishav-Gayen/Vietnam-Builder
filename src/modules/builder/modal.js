@@ -203,6 +203,9 @@ const setupModalHandlers = (modalInstance, destination) => {
       e.target.classList.remove('error');
     }
   });
+
+
+  document.getElementById('itinerary-summary').scrollIntoView({ behavior: 'smooth' });
 };
 
 

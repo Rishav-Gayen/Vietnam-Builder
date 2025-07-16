@@ -844,6 +844,190 @@ body {
   }
 }
 
+/* Flight Form Styles */
+.flight-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+  background: #fff;
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+}
+
+.flight-form h2 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.flight-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.flight-form label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.flight-form input[type="text"],
+.flight-form input[type="date"],
+.flight-form select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.flight-form .radio-group,
+.flight-form .checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.flight-form .radio-group label,
+.flight-form .checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: normal;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+.flight-form input[type="radio"],
+.flight-form input[type="checkbox"] {
+  margin: 0;
+  width: auto;
+}
+
+.flight-form .form-actions {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.flight-form .save-flight-prefs-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.flight-form .save-flight-prefs-btn:hover {
+  background: var(--primary-color-dark);
+}
+
+/* Custom SweetAlert2 Modal */
+.custom-swal-container {
+  font-family: 'Poppins', sans-serif;
+}
+
+.custom-swal-popup {
+  max-width: 300px !important;
+  width: 90% !important;
+  padding: 1rem !important;
+  border-radius: 12px !important;
+  margin: 0 auto !important;
+}
+
+.custom-swal-title {
+  font-size: 1.1rem !important;
+  color: #e53935 !important;
+  margin-bottom: 0.5rem !important;
+  line-height: 1.4 !important;
+  text-align: center !important;
+  font-weight: 600 !important;
+}
+
+.custom-swal-html {
+  margin: 0.5rem 0 !important;
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+  text-align: left !important;
+  color: #555 !important;
+}
+
+.custom-swal-html ul {
+  margin: 0.5rem 0 0 0 !important;
+  padding-left: 1.2rem !important;
+  text-align: left !important;
+}
+
+.custom-swal-html li {
+  margin-bottom: 0.2rem !important;
+  text-align: left !important;
+  list-style-type: disc !important;
+}
+
+.custom-swal-confirm {
+  background-color: #00afef !important;
+  font-size: 0.85rem !important;
+  padding: 0.5rem 1.2rem !important;
+  border-radius: 6px !important;
+  margin: 1rem 0 0 0 !important;
+  transition: all 0.2s ease !important;
+}
+
+.custom-swal-confirm:hover {
+  background-color: #008fbf !important;
+  transform: translateY(-1px);
+}
+
+/* Hide close button */
+.custom-swal-close {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+/* Error icon styling */
+.custom-swal-popup .swal2-x-mark {
+  width: 50px !important;
+  height: 50px !important;
+  margin: 10px auto !important;
+  position: relative;
+}
+
+.custom-swal-popup .swal2-x-mark-line-left,
+.custom-swal-popup .swal2-x-mark-line-right {
+  width: 4px !important;
+  height: 40px !important;
+  background-color: #f27474 !important;
+  position: absolute;
+  top: 50% !important;
+  left: 50% !important;
+  margin: -15px 0 0 -2px !important;
+  border-radius: 2px;
+}
+
+.custom-swal-popup .swal2-x-mark-line-left {
+  transform: rotate(45deg);
+}
+
+.custom-swal-popup .swal2-x-mark-line-right {
+  transform: rotate(-45deg);
+}
+
+
+/* Error messages */
+.error-message {
+  color: #e53935;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
 /* Form Column Styles */
 .form-column {
   flex: 2;
